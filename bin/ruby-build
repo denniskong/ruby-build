@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-RUBY_BUILD_VERSION="20121110"
+RUBY_BUILD_VERSION="20130104"
 
 set -E
 exec 3<&2 # preserve original stderr at fd 3
@@ -583,7 +583,7 @@ else
 fi
 
 if [ -z "$RUBY_BUILD_MIRROR_URL" ]; then
-  RUBY_BUILD_MIRROR_URL="http://cloud.github.com/downloads/sstephenson/ruby-build-download-mirror"
+  RUBY_BUILD_MIRROR_URL="http://dqw8nmjcqpjn7.cloudfront.net"
 else
   RUBY_BUILD_MIRROR_URL="${RUBY_BUILD_MIRROR_URL%/}"
 fi
