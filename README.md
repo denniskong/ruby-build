@@ -15,7 +15,7 @@ need precise control over Ruby version installation.
 Installing ruby-build as an rbenv plugin will give you access to the
 `rbenv install` command.
 
-    git clone git://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
+    git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
 
 This will install the latest development version of ruby-build into
 the `~/.rbenv/plugins/ruby-build` directory. From that directory, you
@@ -29,7 +29,7 @@ the `ruby-build` command for precise control over Ruby version
 installation. If you have rbenv installed, you will also be able to
 use the `rbenv install` command.
 
-    git clone git://github.com/sstephenson/ruby-build.git
+    git clone https://github.com/sstephenson/ruby-build.git
     cd ruby-build
     ./install.sh
 
@@ -65,7 +65,7 @@ Or, if you would like to install the latest development release:
 To install a Ruby version for use with rbenv, run `rbenv install` with
 the exact name of the version you want to install. For example,
 
-    rbenv install 1.9.3-p327
+    rbenv install 1.9.3-p392
 
 Ruby versions will be installed into a directory of the same name
 under `~/.rbenv/versions`.
@@ -84,26 +84,13 @@ Run the `ruby-build` command with the exact name of the version you
 want to install and the full path where you want to install it. For
 example,
 
-    ruby-build 1.9.3-p327 ~/local/ruby-1.9.3-p327
+    ruby-build 1.9.3-p392 ~/local/ruby-1.9.3-p392
 
 To see a list of all available Ruby versions, run `ruby-build
 --definitions`.
 
 Pass the `-v` or `--verbose` flag to `ruby-build` as the first
 argument to see what's happening under the hood.
-
-### A note about Ruby 2.0 and Mac OS X
-
-Ruby 2.0 is incompatible with the version of OpenSSL bundled with Mac
-OS X. To work around this issue, install OpenSSL using Homebrew
-instead:
-
-    brew install openssl
-
-Then set the `CONFIGURE_OPTS` environment variable when you build
-Ruby:
-
-    CONFIGURE_OPTS=--with-openssl-dir=`brew --prefix openssl` rbenv install 2.0.0-preview1
 
 ### Custom definitions
 
@@ -133,8 +120,13 @@ process.
   packages from their original source URLs instead of using a mirror.
 * `CC` sets the path to the C compiler.
 * `CONFIGURE_OPTS` lets you pass additional options to `./configure`.
+* `MAKE` lets you override the command to use for `make`. Useful for
+  specifying GNU make (`gmake`) on some systems.
 * `MAKE_OPTS` (or `MAKEOPTS`) lets you pass additional options to
   `make`.
+* `RUBY_CONFIGURE_OPTS` and `RUBY_MAKE_OPTS` allow you to specify
+  configure and make options for buildling MRI. These variables will
+  be passed to Ruby only, not any dependent packages (e.g. libyaml).
 
 ### Checksum verification
 

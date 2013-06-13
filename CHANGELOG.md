@@ -1,5 +1,75 @@
 ## Version History
 
+#### 20130518
+* Added a definition for JRuby 1.7.4
+
+#### 20130514
+* Added a definition for Ruby 2.0.0-p195
+* Added a definition for Ruby 1.9.3-p429
+* Added a definition for Ruby 1.9.2-p0
+* Added a definition for Ruby 1.9.1-p430
+
+#### 20130501
+* Cache git clone directory
+* Restore -O3 default when building with clang
+* Build REE --without-tk on Darwin if X11 is missing
+* Pass $RUBY_CONFIGURE_OPTS to REE installer with -c
+* Default RBENV_VERSION to the globally-specified Ruby
+
+#### 20130408
+* Added a definition for mruby-dev
+* Added a definition for topaz-dev :gem:
+* List matching definitions on ambiguous version specification
+* Use `--continue` when downloading tarball
+* Keep source tarball if `--keep` or `tar xf` fails
+
+#### 20130227
+* Default Ruby CFLAGS to `-Wno-error=shorten-64-to-32`; don't set `CC`
+* Upgrades rubygems for 1.9.1: 1.3.5 -> 1.3.7
+
+#### 20130226
+* Build a shared openssl to link to Ruby 2.0.0
+
+#### 20130225
+* Added a definition for 2.1.0-dev
+* Rename the CAfile to cert.pem
+* Fix exit status of install with verbose
+
+#### 20130224
+* Happy 20th :birthday:, Ruby!
+* Added a definition for 2.0.0-p0
+* Autoclean on unsuccessful installation
+
+#### 20130222
+* Upgraded to OpenSSL 1.0.1e
+* Added a definition for JRuby 1.7.3
+* Added a definition for 1.9.3-p392
+
+#### 20130208
+* Added a definition for 2.0.0-rc2
+* Build OpenSSL for Ruby 2.0 on OS X
+
+#### 20130206
+* Added a definition for 1.9.3-p385
+
+#### 20130129
+* Changed `rbenv install` to attempt to install the local app-specific
+  version when it is invoked without any arguments.
+* Added interactive confirmation to `rbenv install` when the
+  destination prefix exists. Pass `-f` or `--force` to force
+  installation of versions that are already installed.
+* Added support for specifying which program to use for `make` via the
+  `$MAKE` environment variable. FreeBSD users can now instruct
+  ruby-build to use GNU make by setting `MAKE=gmake`.
+* Modified the post-install process to invoke `chmod` only for group-
+  or world-writable directories.
+* Added `before_install` and `after_install` hooks for `rbenv install`
+  plugins to facilitate post-installation automation.
+
+#### 20130118
+* Added a definition for 2.0.0-rc1
+* Added a definition for 1.9.3-p374
+
 #### 20130104
 * Added a definition for JRuby 1.7.2
 
