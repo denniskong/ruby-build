@@ -44,7 +44,7 @@ your cloned copy of the repository, then re-run the install script.
 ### Installing with Homebrew (for OS X users)
 
 Mac OS X users can install ruby-build with the
-[Homebrew](http://mxcl.github.com/homebrew/) package manager. This
+[Homebrew](http://brew.sh) package manager. This
 will give you access to the `ruby-build` command. If you have rbenv
 installed, you will also be able to use the `rbenv install` command.
 
@@ -65,7 +65,7 @@ Or, if you would like to install the latest development release:
 To install a Ruby version for use with rbenv, run `rbenv install` with
 the exact name of the version you want to install. For example,
 
-    rbenv install 1.9.3-p392
+    rbenv install 1.9.3-p448
 
 Ruby versions will be installed into a directory of the same name
 under `~/.rbenv/versions`.
@@ -84,7 +84,7 @@ Run the `ruby-build` command with the exact name of the version you
 want to install and the full path where you want to install it. For
 example,
 
-    ruby-build 1.9.3-p392 ~/local/ruby-1.9.3-p392
+    ruby-build 1.9.3-p448 ~/local/ruby-1.9.3-p448
 
 To see a list of all available Ruby versions, run `ruby-build
 --definitions`.
