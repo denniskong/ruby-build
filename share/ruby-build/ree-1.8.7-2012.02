@@ -1,11 +1,6 @@
 # tcmalloc and stdout patch for ubuntu 12.04
 build_package_patched() {
-    cd source
-    wget 'https://github.com/wayneeseguin/rvm/raw/master/patches/ree/1.8.7/tcmalloc.patch'
-    wget 'https://github.com/wayneeseguin/rvm/raw/master/patches/ree/1.8.7/stdout-rouge-fix.patch'
-    patch -p1 < tcmalloc.patch
-    patch -p1 < stdout-rouge-fix.patch
-    cd ..
+    patch source/distro/google-perftools-1.7/src/tcmalloc.cc ~/ree-patches/tcmalloc.patch
 }
 
 # Install normaly by default
