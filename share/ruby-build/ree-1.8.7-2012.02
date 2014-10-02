@@ -1,17 +1,20 @@
 # tcmalloc and stdout patch for ubuntu 12.04
 build_package_patched() {
-    patch source/distro/google-perftools-1.7/src/tcmalloc.cc ~/ree-patches/tcmalloc.patch
+  cd source
+  wget 'https://github.com/wayneeseguin/rvm/raw/master/patches/ree/1.8.7/tcmalloc.patch'
+  wget 'https://github.com/wayneeseguin/rvm/raw/master/patches/ree/1.8.7/stdout-rouge-fix.patch'
+  patch -p1 < tcmalloc.patch
+  patch -p1 < stdout-rouge-fix.patch
+  cd ..
 }
-
 # Install normaly by default
 patched=""
-
 # Determine if os is ubuntu version 12.04
 if [ -f /etc/lsb-release ]; then
-    source /etc/lsb-release;
-    if [ $DISTRIB_RELEASE = "12.04" ]; then
-        patched="patched"
-    fi
+  source /etc/lsb-release;
+  if [ $DISTRIB_RELEASE = "12.04" ]; then
+    patched="patched"
+  fi
 fi
 
 require_gcc
